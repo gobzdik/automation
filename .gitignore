@@ -216,3 +216,32 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Виртуальное окружение
+venv/
+env/
+.venv/
+
+# Кеш Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Отчёты
+result.xml
+*.log
+*.html
+*.xml
+
+# Папки с данными (генерируются)
+files/actual/
+files/reports/
+reports/
+screenshots_*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
