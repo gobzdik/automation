@@ -12,7 +12,7 @@ def test_linkedin_login(page: Page):
         password="secret_sauce",
     )
 
-    page.screenshot(path=f"{screenshots_dir}/saucedemo.png")
+    page.screenshot(path=f"{screenshots_dir}/05.png")
 
     # ✅ Проверка по URL
     # expect(page).to_have_url("https://www.saucedemo.com/")
