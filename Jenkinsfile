@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'mcr.microsoft.com/playwright/python:v1.40.0-jammy'
+            args '-u root'
+        }
+    }
 
     stages {
         stage('Checkout') {
@@ -9,20 +14,12 @@ pipeline {
         }
         stage('Setup') {
             steps {
-                sh '''
-                    python3 -m venv venv || true
-                    . venv/bin/activate
-                    pip install -r requirements.txt
-                    playwright install
-                '''
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Run tests') {
             steps {
-                sh '''
-                    . venv/bin/activate
-                    pytest suites/ -v --junitxml=result.xml
-                '''
+                sh 'pytest suites/ -v --junitxml=result.xml'
             }
         }
         stage('Publish results') {
