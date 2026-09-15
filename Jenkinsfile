@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {            
+        docker {
             image 'mcr.microsoft.com/playwright/python:v1.62.0-jammy'
             args '-u root'
         }
@@ -26,6 +26,12 @@ pipeline {
             steps {
                 junit 'result.xml'
             }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'result.xml, screenshots_*/**', allowEmptyArchive: true
         }
     }
 }
