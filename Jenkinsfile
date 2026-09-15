@@ -31,7 +31,7 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'result.xml, screenshots_*/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'result.xml, reports/**', allowEmptyArchive: true
         }
     }
 }
