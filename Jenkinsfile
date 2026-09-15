@@ -10,6 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Код получен'
+                sh 'rm -rf reports/ result.xml'   # ← ОЧИСТКА перед запуском
             }
         }
         stage('Setup') {
@@ -31,7 +32,7 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'result.xml, reports/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'result.xml, reports/**', allowEmptyEmptyArchive: true
         }
     }
 }

@@ -19,7 +19,6 @@ login.json
 # === ПАПКИ С ДАННЫМИ (ГЕНЕРИРУЮТСЯ) ===
 files/actual/
 files/reports/
-reports/
 screenshots_*/
 
 # === IDE ===
