@@ -1,0 +1,29 @@
+# === ВИРТУАЛЬНОЕ ОКРУЖЕНИЕ ===
+venv/
+env/
+.venv/
+
+# === КЕШ PYTHON ===
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# === ОТЧЁТЫ ===
+result.xml
+login.json
+*.log
+*.html
+*.xml
+
+# === ПАПКИ С ДАННЫМИ (ГЕНЕРИРУЮТСЯ) ===
+files/actual/
+files/reports/
+reports/
+screenshots_*/
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
