@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Код получен'
-                sh 'rm -rf reports/ result.xml screenshots.zip'
+                sh 'rm -rf reports/ result.xml screenshots.tar.gz'
             }
         }
         stage('Setup') {
@@ -32,12 +32,9 @@ pipeline {
 
     post {
         always {
-            // Только result.xml как отдельный файл
             archiveArtifacts artifacts: 'result.xml', allowEmptyArchive: true
-            
-            // Скриншоты в ZIP
-            sh 'zip -r screenshots.zip reports/ || true'
-            archiveArtifacts artifacts: 'screenshots.zip', allowEmptyArchive: true
+            sh 'tar -czf screenshots.tar.gz reports/ || true'
+            archiveArtifacts artifacts: 'screenshots.tar.gz', allowEmptyArchive: true
         }
     }
 }
