@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'mcr.microsoft.com/playwright/python:v1.63.0-jammy'
+            image 'mcr.microsoft.com/playwright/python:v1.62.0-jammy'
             args '-u root'
         }
     }
