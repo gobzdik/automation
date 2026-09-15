@@ -17,7 +17,7 @@ def login_to_site(
     password: str,
 ):
     page.goto(url)
-    page.locator('input[autocomplete="username"]:visible').fill(username)
-    page.locator('input[autocomplete="current-password"]:visible').fill(password)
-    page.get_by_role("button", name="Sign in", exact=True).click()
-    page.wait_for_load_state("networkidle")
+    page.locator("#user-name").fill(username)
+    page.locator("#password").fill(password)
+    page.locator("#login-button").click()
+    page.wait_for_load_state("load")
