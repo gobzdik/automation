@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Run tests') {
             steps {
-                sh 'pytest suites/ -v --junitxml=result.xml'
+                sh 'pytest suites/ -v --junitxml=result.xml --alluredir=allure-results'
             }
         }
         stage('Publish results') {
@@ -39,6 +39,7 @@ pipeline {
             archiveArtifacts artifacts: 'result.xml', allowEmptyArchive: true
             sh 'tar -czf screenshots.tar.gz reports/ || true'
             archiveArtifacts artifacts: 'screenshots.tar.gz', allowEmptyArchive: true
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
     }
 }
