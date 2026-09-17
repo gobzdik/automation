@@ -41,8 +41,8 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'result.xml', allowEmptyArchive: true
 
-            sh 'tar -czf screenshots.tar.gz reports/ || true'
-            archiveArtifacts artifacts: 'screenshots.tar.gz', allowEmptyArchive: true
+            sh 'tar -czf results.tar.gz reports/ || true'
+            archiveArtifacts artifacts: 'results.tar.gz', allowEmptyArchive: true
 
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
