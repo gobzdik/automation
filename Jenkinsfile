@@ -45,15 +45,6 @@ pipeline {
             archiveArtifacts artifacts: 'screenshots.tar.gz', allowEmptyArchive: true
 
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-
-            publishHTML([
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'allure-report',
-                reportFiles: 'index.html',
-                reportName: 'Allure Report'
-            ])
         }
     }
 }
