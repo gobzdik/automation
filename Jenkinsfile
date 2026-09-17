@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Код получен'
-                sh 'rm -rf reports/ result.xml screenshots.tar.gz allure-results allure-report'
+                sh 'rm -rf reports/ result.xml results.tar.gz allure-results allure-report'
             }
         }
 
