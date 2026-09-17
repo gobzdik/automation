@@ -1,0 +1,8 @@
+[
+  {
+    "key": "state",
+    "expected": 99,
+    "actual": 4,
+    "type": "value_changed"
+  }
+]
