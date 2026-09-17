@@ -1,0 +1,14 @@
+[
+  {
+    "key": "state",
+    "expected": 99,
+    "actual": 4,
+    "type": "value_changed"
+  },
+  {
+    "key": "parameters.parts",
+    "expected": "820",
+    "actual": 820,
+    "type": "value_changed"
+  }
+]

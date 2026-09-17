@@ -7,7 +7,6 @@ _screenshots_folder = None
 
 
 def create_screenshot_folder(base_name="test_result"):
-    """Создаёт папку с timestamp ОДИН РАЗ за запуск"""
     global _screenshots_folder
     if _screenshots_folder is None:
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -67,7 +66,6 @@ def prepare_for_comparison(data, keys_to_exclude=None, normalize_case=True):
 
 
 def get_type_description(value):
-    """Возвращает описание типа для отчёта"""
     if isinstance(value, dict):
         return "object"
     elif isinstance(value, list):
@@ -79,7 +77,6 @@ def get_type_description(value):
 
 
 def sort_routes_by_route_name(data):
-    """Рекурсивно находит массив 'routes' и сортирует его по route_name"""
     if isinstance(data, dict):
         if "routes" in data and isinstance(data["routes"], list):
             data["routes"] = sorted(
@@ -96,7 +93,6 @@ def sort_routes_by_route_name(data):
 
 
 def get_all_differences(actual, expected, path=""):
-    """Рекурсивно находит ВСЕ различия между двумя JSON"""
     differences = []
 
     if isinstance(actual, dict) and isinstance(expected, dict):
@@ -212,6 +208,5 @@ def get_all_differences(actual, expected, path=""):
 
 
 def save_diff_report(differences, report_file):
-    """Сохраняет отчёт о различиях в читаемом формате"""
     with open(report_file, "w", encoding="utf-8") as f:
         json.dump(differences, f, indent=2, ensure_ascii=False)
