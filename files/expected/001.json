@@ -7,7 +7,7 @@
     "optimization_errors": [
         
     ],
-    "state": 99,
+    "state": 4,
     "created_timestamp": 1789029793,
     "scheduled_for": 1789023600,
     "optimization_completed_timestamp": null,
@@ -45,7 +45,7 @@
         "ip": 3164830693,
         "dm": 12,
         "dirm": 10,
-        "parts": "820",
+        "parts": 820,
         "parts_min": 1,
         "device_id": "",
         "device_type": "web",
@@ -1042,8 +1042,6 @@
                         "expected_sequence_no": null,
                         "revision_count": null
                     },
-                    "service_type_id": null,
-                    "service_type_label": null,
                     "order_last_status": null,
                     "sla_policy_id": null,
                     "sla_start": null,

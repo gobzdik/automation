@@ -1,0 +1,20 @@
+[
+  {
+    "key": "parameters.parts",
+    "expected": "820",
+    "actual": 820,
+    "type": "value_changed"
+  },
+  {
+    "key": "routes[0].addresses[0].service_type_label",
+    "expected": null,
+    "actual": "key is not presented",
+    "type": "missing_in_actual"
+  },
+  {
+    "key": "routes[0].addresses[0].service_type_id",
+    "expected": null,
+    "actual": "key is not presented",
+    "type": "missing_in_actual"
+  }
+]
