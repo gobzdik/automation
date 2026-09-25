@@ -20,8 +20,9 @@ pipeline {
 
         stage('Setup') {
             steps {
+                sh 'pip install -r requirements_v.txt'
                 //sh 'pip install -r requirements.txt'
-                sh 'pip install -r requirements_lock.txt'
+                //sh 'pip install -r requirements_lock.txt'
             }
         }
 
