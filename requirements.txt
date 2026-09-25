@@ -3,3 +3,4 @@ pytest
 playwright==1.62.0
 pytest-playwright
 allure-pytest
+ijson
